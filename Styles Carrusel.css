@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.carrusel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%; /* Se amplía el contenedor */
+}
+.fila {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espaciado entre imágenes */
+}
+.imagen {
+    position: relative; /* Para posicionar el texto sobre la imagen */
+    transition: flex-grow 0.3s ease; /* Transición suave para el crecimiento */
+    flex: 0 1 200px; /* Permitir que las imágenes ocupen espacio en la fila */
+    display: flex; /* Usar flexbox para el contenido */
+    flex-direction: column; /* Coloca el texto debajo de la imagen */
+    align-items: center; /* Centra el contenido */
+}
+.imagen img {
+    width: 100%; /* Tamaño más grande */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 1s ease; /* Transición para la imagen */
+}
+.imagen:hover {
+    flex-grow: 0.2; /* Aumenta el tamaño de la imagen al pasar el mouse */
+}
+.imagen:hover img {
+    transform: scale(1.05); /* Aumenta el tamaño de la imagen de forma más sutil */
+}
+.info {
+    color: white; /* Color del texto */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    padding: 5px;
+    border-radius: 5px;
+    transition: transform 0.3s ease; /* Transición para el texto */
+    margin-top: 5px; /* Espacio entre la imagen y el texto */
+}
+.imagen:hover .info {
+    transform: translateY(-5px); /* Aleja el texto hacia arriba al hacer hover */
+}
+.info h3 {
+    margin: 0; /* Elimina el margen */
+    font-size: 1.1em; /* Tamaño del título */
+}
+.info p {
+    margin: 0; /* Elimina el margen */
+    font-size: 0.9em; /* Tamaño del artista */
+}
